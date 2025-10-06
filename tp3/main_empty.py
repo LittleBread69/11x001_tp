@@ -9,45 +9,84 @@ from utils import exercice
 @exercice
 def exercice1():
     # ******************** Votre code ci-dessous ********************
-    pass
+    number = int(input("Entrez un nombre: "))
+    print(f"{number} est {'positif' if number>0 else 'nul' if number==0 else 'négatif'}.")
     # ******************** Votre code ci-dessus *********************
 
 @exercice
 def exercice2():
     ma_liste = [4, 3, 7, 10, 42, 1]
+    ind = 0
+    biggest_number = -float('inf')
     # ******************** Votre code ci-dessous ********************
-    pass
+    while ind < len(ma_liste):
+        biggest_number = ma_liste[ind] if ma_liste[ind] > biggest_number else biggest_number
+        ind += 1
+    print(f"{biggest_number} est le nombre le plus grand (selon while)")
+    biggest_number = -float('inf')
+    for _, element in enumerate(ma_liste):
+        biggest_number = element if element > biggest_number else biggest_number
+    print(f"{biggest_number} est le nombre le plus grand (selon for enumerate)")
+
     # ******************** Votre code ci-dessus *********************
 
 @exercice
 def exercice3():
     ma_liste = [4, 3, 7, 10, 42, 1]
     # ******************** Votre code ci-dessous ********************
-    pass
+    ind = 0
+    smallest_number = float('inf')
+    # ******************** Votre code ci-dessous ********************
+    while ind < len(ma_liste):
+        smallest_number = ma_liste[ind] if ma_liste[ind] < smallest_number else smallest_number
+        ind += 1
+    print(f"{smallest_number} est le nombre le plus petit (selon while)")
+    smallest_number = float('inf')
+    for _, element in enumerate(ma_liste):
+        smallest_number = element if element < smallest_number else smallest_number
+    print(f"{smallest_number} est le nombre le plus petit (selon for enumerate)")
     # ******************** Votre code ci-dessus *********************
 
 @exercice
 def exercice4():
     # ******************** Votre code ci-dessous ********************
-    pass
+    hauteur = int(input("Hauteur du carré: "))
+    for i in range(hauteur):
+        print(" "*(hauteur-i), "*"*(i*2+1))
+    for i in range(hauteur-2, -1, -1):
+        print(" "*(hauteur-i), "*"*(i*2+1))
+
     # ******************** Votre code ci-dessus *********************
 
-def fibo_iteratif(n):   # fonction à un seul argument
+def fibo_iteratif(n:int):   # fonction à un seul argument
     # TODO n° 2 de l'ex 5:
     # ******************** Votre code ci-dessous ********************
-    pass    # il faut des "return"
+    a, b = 0, 1
+    for i in range(0, n):
+        a, b = b, a + b
+    return a
     # ******************** Votre code ci-dessus *********************
 
 @exercice
 def exercice5():
     # ******************** Votre code ci-dessous ********************
-    pass
+    F_n = int(input("Entier à calculer (Fib): "))
+    print(f"{fibo_iteratif} returns {fibo_iteratif(F_n)}")
     # ******************** Votre code ci-dessus *********************
 
 @exercice
 def exercice6():
     # ******************** Votre code ci-dessous ********************
-    pass
+    liste_1 = ["Alice", "Bob"]
+    liste_2 = ["Charlie", "Eve"]
+    ma_liste = liste_1+liste_2
+    print(f"Ma liste utilisant '+=': {ma_liste}")
+    print("\n")
+
+    ma_liste = liste_1
+    for element in liste_2:
+        ma_liste.append(element)
+    print(f"Ma liste utilisant '.append' {ma_liste}")
     # ******************** Votre code ci-dessus *********************
 
 def tri(ma_liste):  # fonction à un seul argument
@@ -67,7 +106,7 @@ def exercice7():
     # Cependant, par soucis de compréhension, il est des fois préférable d'écrire
     # la boucle sur plusieurs lignes.
     # Le _ entre le for et le in est juste pour dire qu'on n'utilise pas cette valeur.
-    print("Liste à trier:", ma_liste) 
+    print("Liste à trier:", ma_liste)
     # ******************** Votre code ci-dessous ********************
     pass
     # ******************** Votre code ci-dessus *********************
@@ -78,11 +117,13 @@ def exercice8():
     random.seed(7)
     # Liste pseudo-aléatoire avec seed fixée (la liste ne change pas si vous relancez)
     ma_liste = [random.randrange(100) for _ in range(10)]   # 10 nombres
-    print("Liste à séparer:", ma_liste) 
+    print("Liste à séparer:", ma_liste)
     # ******************** Votre code ci-dessous ********************
-    pass
+    pairs = [i for i in ma_liste if i%2 == 0]
+    print(f"\nPairs: {pairs}")
+    impaires = [i for i in ma_liste if i%2 == 1]
+    print(f"\nImpairs: {impaires}")
     # ******************** Votre code ci-dessus *********************
-
 
 @exercice
 def exercice9():
@@ -111,14 +152,14 @@ def exercice11():
     pass
     # ******************** Votre code ci-dessus *********************
 
-    
+
 if __name__ == "__main__":
     # Astuce : commenter tous les exercices sauf celui en cours pour gagner du temps !
-    exercice1()
-    exercice2()
-    exercice3()
-    exercice4()
-    exercice5()
+    ##exercice1()
+    ##exercice2()
+    ##exercice3()
+    ##exercice4()
+    ##exercice5()
     exercice6()
     exercice7()
     exercice8()
