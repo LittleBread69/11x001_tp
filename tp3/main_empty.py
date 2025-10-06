@@ -88,7 +88,7 @@ def exercice6():
         ma_liste.append(element)
     print(f"Ma liste utilisant '.append' {ma_liste}")
     # ******************** Votre code ci-dessus *********************
-
+"""
 def tri(ma_liste):  # fonction à un seul argument
     # TODO n° 2 de l'exercice 7 (version in-place):
     # ******************** Votre code ci-dessous ********************
@@ -110,7 +110,7 @@ def exercice7():
     # ******************** Votre code ci-dessous ********************
     pass
     # ******************** Votre code ci-dessus *********************
-
+"""
 @exercice
 def exercice8():
     import random
@@ -128,7 +128,22 @@ def exercice8():
 @exercice
 def exercice9():
     # ******************** Votre code ci-dessous ********************
-    pass
+    a = [2, 3]
+    b = a
+    print(a)
+    print(b)
+    # ici b pointe vers la liste a
+
+    b[0] = 1
+    print(a)
+    print(b)
+    # puisque b pointe vers la liste a, changer b change en faite a
+
+    a = [5, 6]
+    b[0] = 10
+    print(a)
+    print(b)
+    # en reassignant a, b devient le détenteur de b et donc modifier b ne change pas a
     # ******************** Votre code ci-dessus *********************
 
 @exercice
@@ -136,20 +151,23 @@ def exercice10():
     liste_de_liste = [[93, 49, 71], [36, 83, 53], [66, 32, 51]]
     liste_applatie = []
     # ******************** Votre code ci-dessous ********************
-    pass
+    for liste in liste_de_liste:
+        liste_applatie += liste
+    print(liste_applatie)
     # ******************** Votre code ci-dessus *********************
 
 # Fonction à compléter ex11:
-def est_palindrome(ma_chaine):
+def est_palindrome(ma_chaine) -> bool:
     # ******************** Votre code ci-dessous ********************
-    pass
+    ma_chaine = ma_chaine.replace(" ", "")
+    return ma_chaine == ma_chaine[::-1]
     # ******************** Votre code ci-dessus *********************
 
 @exercice
-def exercice11():
-    ma_chaine = input("Entrez la chaine de caractères: ")
+def exercice11() -> bool:
+    ma_chaine = "palindrome" #input("Entrez la chaine de caractères: ")
     # ******************** Votre code ci-dessous ********************
-    pass
+    print(f"ma_chaine: {ma_chaine}\nma_chaine_renversée: {ma_chaine[::-1]}\n{est_palindrome(ma_chaine)}")
     # ******************** Votre code ci-dessus *********************
 
 
@@ -161,7 +179,7 @@ if __name__ == "__main__":
     ##exercice4()
     ##exercice5()
     exercice6()
-    exercice7()
+    #exercice7() #je fais exprès de ne pas faire le 7, car je l'ai déjà compris et je veux éviter de me trend y pencher.
     exercice8()
     exercice9()
     exercice10()
