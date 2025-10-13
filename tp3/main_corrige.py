@@ -102,6 +102,29 @@ def exercice4():
 
     # ******************** Votre code ci-dessus *********************
 
+@exercice
+def exercice4_v2():
+    # ******************** Votre code ci-dessous ********************
+    hauteur = int(input("Donnez la hauteur du losange: "))
+
+    n = hauteur // 2 + 1
+    cote = [["*" if i==j else " " for i in range(n)] for j in range(n)]
+    cote_reverse = cote[::-1]
+    half = [cote_reverse[i] + cote[i][1:] for i in range(n)]
+
+    half_reverse = half[::-1]
+    full = half + half_reverse[1:]
+
+    full_str = ""
+    for line in full:
+        for char in line:
+            full_str += char
+        full_str += "\n"
+
+    print(full_str)
+    # ******************** Votre code ci-dessus *********************
+
+
 def fibo_iteratif(n):   # fonction à un seul argument
     # TODO n° 2 de l'ex 5:
     fibos = [0, 1, 1]   # Liste stockant les résultats intermédiaires
@@ -294,14 +317,15 @@ def exercice11():
     
 if __name__ == "__main__":
     # Astuce : commenter tous les exercices sauf celui en cours pour gagner du temps !
-    exercice1()
-    exercice2()
-    exercice3()
+    # exercice1()
+    # exercice2()
+    # exercice3()
     exercice4()
-    exercice5()
-    exercice6()
-    exercice7()
-    exercice8()
-    exercice9()
-    exercice10()
-    exercice11()
+    exercice4_v2()
+    # exercice5()
+    # exercice6()
+    # exercice7()
+    # exercice8()
+    # exercice9()
+    # exercice10()
+    # exercice11()
