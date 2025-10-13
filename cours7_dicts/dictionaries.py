@@ -1,5 +1,6 @@
 #NOT PART OF CLASS
 from __future__ import annotations
+from pprint import pprint
 
 #PART OF CLASS
 programming_dict = {
@@ -19,7 +20,7 @@ print(programming_dict["Bug"])
 # New entry in dictionnary
 programming_dict["Loop"] = "Action of doing something over and over again"
 
-print(programming_dict)
+pprint(programming_dict)
 
 # Empty dictionnary
 emptry_dict = {}
@@ -27,7 +28,7 @@ print(emptry_dict)
 
 # Change the dict value
 programming_dict["Bug"] = "An insect"
-print(programming_dict)
+pprint(programming_dict)
 
 # Empty a dictionnary
 programming_dict = {}
