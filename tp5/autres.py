@@ -9,8 +9,10 @@ def fact(n: int) -> int:
     """
     if n < 0:
         raise ValueError("Pas de nobre entiers en dessous de 0")
-    if n == 0: 
-        return 0
-    if n == 1:
-        return 1
-    return n * (fact(n - 1))
+    match n:
+        case 0:
+            return 0
+        case 1:
+            return 1
+        case _:
+            return n * (fact(n - 1))
