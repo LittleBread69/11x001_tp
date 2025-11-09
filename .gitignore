@@ -269,5 +269,6 @@ dkms.conf
 #macos
 .DS_Store
 
-#compiled C
-*.out
+# Visual Studio Code specifics
+c_cpp_properties.json
+tasks.json
