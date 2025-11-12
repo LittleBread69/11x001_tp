@@ -26,7 +26,8 @@ void exercice2(void){
     const char G = 'G';
     const char E = 'E';
 
-    printf("%c%c%c%c%c\n\n", U, N, I, G, E);
+    printf("%c%c%c%c%c\n", U, N, I, G, E);
+    printf("%c%c%c%c%c\n", E, G, I, N, U);
     /******************** Votre code ci-dessus *********************/
     return;
 }
