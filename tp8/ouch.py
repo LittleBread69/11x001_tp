@@ -1,0 +1,1 @@
+print(f"ouch = {3 < 4 < 2}") #prints out False
