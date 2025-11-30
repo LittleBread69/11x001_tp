@@ -1,0 +1,1 @@
+clear && clang -O3 -march=znver2 -mtune=native -ffp-model=precise -fassociative-math -freciprocal-math -ffp-contract=fast -flto=thin -fuse-ld=lld .\main_empty.c && .\a.exe
