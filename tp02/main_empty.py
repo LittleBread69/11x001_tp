@@ -57,13 +57,13 @@ def exercice1():
 @exercice
 def exercice2():
     # ******************** Votre code ci-dessous ********************
-    ...
+    pass
     # ******************** Votre code ci-dessus *********************
 
 @exercice
 def exercice3():
     # ******************** Votre code ci-dessous ********************
-    ...
+    pass
     # ******************** Votre code ci-dessus *********************
 
 @exercice
@@ -100,8 +100,8 @@ def exercice6():
 def exercice7():
     # ******************** Votre code ci-dessous ********************
     liste_de_mots = "The quick brown fox jumps over the lazy dog <END>".split()
-    input_sequence = liste_de_mots[:4]
-    target_sequence = liste_de_mots[4:]
+    input_sequence = liste_de_mots[:-1]
+    target_sequence = liste_de_mots[1:]
     print(input_sequence, target_sequence)
 
     # ******************** Votre code ci-dessus *********************
