@@ -1,0 +1,1 @@
+clear && clang -O3 -mcpu=apple-m1 -mtune=native -ffp-model=precise -fassociative-math -freciprocal-math -ffp-contract=fast -flto=thin ./main_empty.c && ./a.out
