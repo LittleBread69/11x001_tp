@@ -23,7 +23,7 @@ Université de Genève, cours [11X001 Introduction à la Programmation des Algor
 
 ---
 
-## Exercice 3
+## Exercice 3  (Optionnel)
 
 Cette exercice consiste à étendre l'implémentation d'un vecteur vue dans le cours au cas d'une matrice.
 
