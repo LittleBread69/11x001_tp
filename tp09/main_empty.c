@@ -154,7 +154,18 @@ void exercice4(void) {
     printf("\n\nEXERCICE 4\n\n");
     
     /******************** Votre code ci-dessous ********************/
+    int entier_1, entier_2, entier_3, entier_4, entier_5, somme = 0;
 
+    printf("Veillez renseigner 5 entiers (_ _ _ _ _): ");
+    scanf("%d %d %d %d %d", &entier_1, &entier_2, &entier_3, &entier_4, &entier_5);
+
+    int entiers[5] = {entier_1, entier_2, entier_3, entier_4, entier_5};
+
+    for (int i = 0; i<5; i++){
+        somme += entiers[i];
+    }
+
+    printf("Somme des entiers: %d\n", somme);
     /******************** Votre code ci-dessus *********************/
 
     return;
@@ -165,6 +176,12 @@ void exercice4_bis(void) {
     printf("\n\nEXERCICE 4 BIS\n\n");
     
     /******************** Votre code ci-dessous ********************/
+    int entier_1, entier_2, entier_3, entier_4, entier_5, somme = 0;
+
+    printf("Veillez renseigner 5 entiers (_ _ _ _ _): ");
+    scanf("%d %d %d %d %d", &entier_1, &entier_2, &entier_3, &entier_4, &entier_5);
+
+    int entiers[5] = {entier_1, entier_2, entier_3, entier_4, entier_5};
 
     /******************** Votre code ci-dessus *********************/
 
