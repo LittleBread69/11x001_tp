@@ -209,7 +209,7 @@ void exercice5(void) {
     };
 
     struct Etudiant etudiant;
-    printf("Veuillez renseigner le nom de l'étudiant et sa note: _nom_ _note_\n");
+    printf("Veuillez renseigner le nom de l'étudiant et sa note: _prénom_ _note_\n");
     scanf("%s %d", etudiant.prenom, &etudiant.note);
     
     if (etudiant.note >= 4){
@@ -229,7 +229,27 @@ void exercice5_bis(void) {
     printf("\n\nEXERCICE 5 BIS\n\n");
 
     /******************** Votre code ci-dessous ********************/
-    
+    struct Etudiant{
+        char prenom[30];
+        int note;
+    };
+
+    struct Etudiant etudiants[3];
+
+    for (short i = 0; i < 3; i++){
+        printf("Veuillez renseigner le nom de l'étudiant numéro %d et sa note: _prénom_ _note_\n", i+1);
+        scanf("%s %d", etudiants[i].prenom, &etudiants[i].note);
+    }
+
+    for (short i = 0; i < 3; i++){
+        if (etudiants[i].note >= 4){
+            printf("L'étudiant %s a réussi IPA\n", etudiants[i].prenom);
+        }
+        else{
+            printf("L'étudiant %s a raté IPA\n", etudiants[i].prenom);
+        }
+    }
+
     /******************** Votre code ci-dessus *********************/
 
     return;
