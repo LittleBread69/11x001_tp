@@ -260,7 +260,15 @@ void exercice5_ter(void) {
     printf("\n\nEXERCICE 5 TER\n\n");
     
     /******************** Votre code ci-dessous ********************/
+        struct Etudiant{
+        char prenom[30];
+        int note;
+    };
 
+    struct Etudiant etudiants[7];
+
+    int nb_etudiants = sizeof(etudiants) / sizeof(etudiants[0]);
+    printf("Il y a %d étudiants en cours d'IPA", nb_etudiants);
     /******************** Votre code ci-dessus *********************/
 }
 
@@ -269,27 +277,99 @@ void exercice6(void) {
     printf("\n\nEXERCICE 6\n\n");
     
     /******************** Votre code ci-dessous ********************/
+    struct Passagers
+    {
+        char prenom[30];
+        int siege;
+    };
+    
 
+    struct Vol {
+        char depart[64];
+        char destination[64];
+        int duree;
+        struct Passagers passagers[3];  
+    };
+
+    struct Vol vols[2];
+
+    for (short v = 0; v < (sizeof(vols)/sizeof(vols[0])); v++){
+        printf("Entrez le depart du vol: ");
+        scanf("%s", vols[v].depart);
+        printf("\nEntrez la destination du vol: ");
+        scanf("%s", vols[v].destination);
+        printf("\nEntrez la durée vol: ");
+        scanf("%d", &vols[v].duree);
+        printf("\n");
+
+        for (short p = 0; p < (sizeof(vols[v].passagers)/sizeof(vols[v].passagers[v])); p++){
+            printf("\nEntrez le prénom du passager numéro %d du vol %d: ", p, v);
+            scanf("%s", vols[v].passagers[p].prenom);
+            printf("\nEntrez le siege du passager numéro %d du vol %d: ", p, v);
+            scanf("%d", &vols[v].passagers[p].siege);
+        }
+        printf("\n");
+    }
+
+    for (short v = 0; v < (sizeof(vols)/sizeof(vols[0])); v++){
+        printf("Vol au départ de %s et à destination de %s d'une durée de %d heures, nous appelons les passagers : \n", vols[v].depart, vols[v].destination, vols[v].duree);
+        for (short p = 0; p < (sizeof(vols[v].passagers)/sizeof(vols[v].passagers[v])); p++){
+            printf("- %s siège %d. \n", vols[v].passagers[p].prenom, vols[v].passagers[p].siege);
+        }
+    }
     /******************** Votre code ci-dessus *********************/
 
     return;
+}
+void exercice7(void) {
+    printf("\n\nEXERCICE 7 (Démonstration)\n\n");
+    int a = 42;
+    {
+        int a = 3;
+        printf("a=%d\n", a);
+    }
+    printf("a=%d\n", a);
+}
+
+void showLocal() {
+    int val = 10;
+    printf("in showLocal: %d\n", val);
+}
+
+void exercice7_bis(void) {
+    printf("\n\nEXERCICE 7 BIS (Démonstration)\n\n");
+    int val = 100;
+
+    printf("before showLocal: %d\n", val);
+    
+    showLocal();
+    
+    printf("after showLocal: %d\n", val);
+
+    if (1 < 2) {
+        int val = 1000; 
+        printf("in if block: %d\n", val);
+    }
+
 }
 
 int main(void) {   
 
     // Astuce : commenter tous les exercices sauf celui en cours pour gagner du temps !
     
-    //exercice1();
-    //exercice2();
-    //exercice2_bis();
-    //exercice3();
-    //exercice3_bis();
-    //exercice4();
-    //exercice4_bis();
+    exercice1();
+    exercice2();
+    exercice2_bis();
+    exercice3();
+    exercice3_bis();
+    exercice4();
+    exercice4_bis();
     exercice5();
     exercice5_bis();
     exercice5_ter();
     exercice6();
+    exercice7();
+    exercice7_bis();
 
     return 0;
 }
