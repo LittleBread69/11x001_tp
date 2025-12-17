@@ -174,15 +174,25 @@ void exercice4(void) {
 
 void exercice4_bis(void) {
     printf("\n\nEXERCICE 4 BIS\n\n");
-    
+
     /******************** Votre code ci-dessous ********************/
     int entier_1, entier_2, entier_3, entier_4, entier_5, somme = 0;
 
-    printf("Veillez renseigner 5 entiers (_ _ _ _ _): ");
+    printf("Veuillez renseigner 5 entiers (_ _ _ _ _): ");
     scanf("%d %d %d %d %d", &entier_1, &entier_2, &entier_3, &entier_4, &entier_5);
 
     int entiers[5] = {entier_1, entier_2, entier_3, entier_4, entier_5};
 
+    int min_entier = entiers[0], max_entier = entiers[0];
+
+    for (int i = 0; i < 5; i++){
+        min_entier = (entiers[i] * (entiers[i] < min_entier)) + (min_entier * (entiers[i] >= min_entier));
+    }
+    for (int i = 0; i < 5; i++){
+        max_entier = (entiers[i] * (entiers[i] > max_entier)) + (max_entier * (entiers[i] <= max_entier));
+    }
+
+    printf("Le plus petit des entiers: %d; le plus grand des entiers: %d\n", min_entier, max_entier);
     /******************** Votre code ci-dessus *********************/
 
     return;
@@ -193,7 +203,22 @@ void exercice5(void) {
     printf("\n\nEXERCICE 5\n\n");
     
     /******************** Votre code ci-dessous ********************/
+    struct Etudiant{
+        char prenom[30];
+        int note;
+    };
 
+    struct Etudiant etudiant;
+    printf("Veuillez renseigner le nom de l'étudiant et sa note: _nom_ _note_\n");
+    scanf("%s %d", etudiant.prenom, &etudiant.note);
+    
+    if (etudiant.note >= 4){
+        printf("L'étudiant %s a réussi IPA\n", etudiant.prenom);
+    }
+    else{
+        printf("L'étudiant %s a raté IPA\n", etudiant.prenom);
+    }
+    
     /******************** Votre code ci-dessus *********************/
 
     return;
@@ -202,9 +227,9 @@ void exercice5(void) {
 
 void exercice5_bis(void) {
     printf("\n\nEXERCICE 5 BIS\n\n");
-    
-    /******************** Votre code ci-dessous ********************/
 
+    /******************** Votre code ci-dessous ********************/
+    
     /******************** Votre code ci-dessus *********************/
 
     return;
@@ -234,13 +259,13 @@ int main(void) {
 
     // Astuce : commenter tous les exercices sauf celui en cours pour gagner du temps !
     
-    exercice1();
-    exercice2();
-    exercice2_bis();
-    exercice3();
-    exercice3_bis();
-    exercice4();
-    exercice4_bis();
+    //exercice1();
+    //exercice2();
+    //exercice2_bis();
+    //exercice3();
+    //exercice3_bis();
+    //exercice4();
+    //exercice4_bis();
     exercice5();
     exercice5_bis();
     exercice5_ter();

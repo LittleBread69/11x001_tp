@@ -32,7 +32,7 @@ void exercice2(void) {
     int mon_entier;
     int mon_entier_initial;
     int somme = 0;
- 
+    
     printf("Renseigner un entier naturel : ");
     scanf("%d", &mon_entier);
 
