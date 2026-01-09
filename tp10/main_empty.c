@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/*TP10*/
 
 /****************************/
 /* Vos fonctions ci-dessous */ 
@@ -8,20 +9,39 @@
 
 
 // EXERCICE 1
-
+float somme(float a, float b){ //sum
+    return a + b;
+}
 
 // EXERCICE 2
-
+int puissance(int nombre, int exposant){
+    if (exposant < 0){
+        return 0;
+    }
+    else if (exposant == 0){
+        return 1;
+    }
+    else
+    {
+        int resultat = nombre;
+        for (int i = 1; i < exposant; i++){
+            resultat *= nombre;
+        }
+        return resultat;
+    }
+}
 
 // EXERCICE 4
 
 int restreindre_intervalle_pure(int x, int min, int max) {
     /******************** Votre code ci-dessous ********************/
+
     /******************** Votre code ci-dessus ********************/
 }
 
 void restreindre_intervalle_bord(int *x, int min, int max) {
     /******************** Votre code ci-dessous ********************/
+
     /******************** Votre code ci-dessus ********************/
 }
 
@@ -60,7 +80,7 @@ void exercice1(void) {
     scanf("%f %f", &a, &b);
     
     // TODO : Décommenter la ligne suivante une fois que la fonction somme est implémentée
-    // c = somme(a, b); 
+    c = somme(a, b); 
     
     printf("%f + %f = %f\n", a, b, c);
 
@@ -77,7 +97,7 @@ void exercice2(void) {
     scanf("%d %d", &nombre, &exposant); 
 
     /******************** Votre code ci-dessous ********************/
-   
+    resultat = puissance(nombre, exposant);
     /******************** Votre code ci-dessus *********************/
 
     printf("%d^%d = %d\n", nombre, exposant, resultat);
@@ -93,7 +113,14 @@ void exercice3(void) {
     printf("a = %d (adresse : %p) \n", a, &a);
     
     /******************** Votre code ci-dessous ********************/
-    
+    int *p1, *p2;
+
+    p1 = &a;
+    *p1 -= 3;
+    printf("a = %d (adresse : %p) \n", a, &a);
+    p2 = p1;
+    *p2 *= 6;
+    printf("a = %d (adresse : %p) \n", a, &a);
     /******************** Votre code ci-dessus *********************/
 
     return;
@@ -243,7 +270,7 @@ void exercice10(void) {
     scanf("%d", &nb_points_par_axe);
 
     /******************** Votre code ci-dessous ********************/
-        
+    
     /******************** Votre code ci-dessus *********************/
 
     return;
@@ -254,16 +281,16 @@ int main(void) {
 
     // Astuce : commenter tous les exercices sauf celui en cours pour gagner du temps !
 
-    exercice1();
-    exercice2();
-    exercice3();
+    //exercice1();
+    //exercice2();
+    //exercice3();
     exercice4();
-    exercice5();
-    exercice6();
-    exercice7();
-    exercice8();
-    exercice9();
-    exercice10();
+    //exercice5();
+    //exercice6();
+    //exercice7();
+    //exercice8();
+    //exercice9();
+    //exercice10();
     
     return 0;
 }
