@@ -35,13 +35,16 @@ int puissance(int nombre, int exposant){
 
 int restreindre_intervalle_pure(int x, int min, int max) {
     /******************** Votre code ci-dessous ********************/
-
+    if (x < min) return min;
+    else if (x > max) return max;
+    else return x;
     /******************** Votre code ci-dessus ********************/
 }
 
 void restreindre_intervalle_bord(int *x, int min, int max) {
     /******************** Votre code ci-dessous ********************/
-
+    if (*x < min) *x = min;
+    else if (*x > max) *x = max;
     /******************** Votre code ci-dessus ********************/
 }
 
@@ -54,7 +57,7 @@ void restreindre_intervalle_bord(int *x, int min, int max) {
 int rechercheDichotomique(int arr[], int low, int high, int x) {
     if (high >= low) {
         /******************** Votre code ci-dessous ********************/
-        
+
         /******************** Votre code ci-dessus *********************/
     }
     return -1;
