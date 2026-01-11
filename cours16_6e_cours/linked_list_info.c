@@ -59,7 +59,7 @@ int length_nodes(node *n){
         return 1 + length_nodes(n->next);
     }
     else {
-     return 0;
+        return 0;
 }
 }
 
