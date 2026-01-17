@@ -11,6 +11,8 @@ int *pointer_to_int;
 int **pointer_to_pointer_of_int;
 ```
 
+Their usage is vast and varied but to put it simply, pointers are a better way to show a value that exists, especially in the context of the HEAP.
+
 ## When to use `*` and `&`
 
 ```C
@@ -99,3 +101,12 @@ t_car makeNewCar(int wheelCount, char *brand, float speed){
     return vehicle;
 }
 ```
+
+## What is `Segfault`?
+
+Segfault is an error you get from the compiler when you try to access a memory that isn't allocated or that is incorrect (NULL).
+Common times where yoo get a `Segfault` include but aren't limited to:
+ - Accessing an element that is out of the bounds of the iterated.
+ - Wrong adress LOL, find from context noob.
+ - 
+ - idk core dumped
